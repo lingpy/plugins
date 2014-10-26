@@ -348,14 +348,16 @@ def secondary_structures(tokens):
 
 class Wordlist(lingpyd.basic.wordlist.Wordlist):
 
-    def __init__(self, infile):
+    def __init__(self, infile, **keywords):
         
-        if infile.endswith('.triples'):
-            D = lingpyd.basic.ops.triple2tsv(infile, output='dict')
+        if type(infile) == dict:
+            lingpyd.basic.wordlist.Wordlist.__init__(self, infile, **keywords)  
+        elif infile.endswith('.triples'):
+            D = lingpyd.basic.ops.triple2tsv(infile, output='dict', **keywords)
 
             lingpyd.basic.wordlist.Wordlist.__init__(self, D)
         else:
-            lingpyd.basic.wordlist.Wordlist.__init__(self,infile)
+            lingpyd.basic.wordlist.Wordlist.__init__(self,infile, **keywords)
     
     def tokenize(self, override=True, preprocessing=False):
 
