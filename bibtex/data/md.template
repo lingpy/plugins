@@ -1,0 +1,6 @@
+article	{author} {year}{title}{subtitle}{userb}{usera}. {journal}{volume}{number} {pages}
+book	{author} {year}{title}{subtitle}{userb}{usera}. {publisher}{address}
+incollection	{author} {year}{title}{subtitle}{userb}{usera}. In: {editor}{booktitle}{publisher}{address} {pages}
+inproceedings	{author} {year}{title}{subtitle}{userb}{usera}. In: {booktitle}{organization} {pages}
+misc	{author} {year}{title}{subtitle}{userb}{usera}. {howpublished}
+
